@@ -1,0 +1,13 @@
+{
+  "name": "nepali-text-conversion",
+  "version": "1.0.0",
+  "description": "A simple basic text conversion tool. This tool can convert unicode text to preeti text and vice-versa.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ankur Singh",
+  "license": "MIT"
+}
