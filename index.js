@@ -1,6 +1,5 @@
 let _0x6ec5 = ["\x76\x61\x6C\x75\x65", "\x75\x6E\x69\x63\x6F\x64\x65\x62\x6F\x78", "\x6E\x65\x70\x61\x6C\x69", "\u0905", "\x72\x65\x70\x6C\x61\x63\x65", "\u0906", "\u0907", "\u0908", "\u0909", "\u090A", "\u090F", "\u0910", "\u0913", "\u0914", "\u200B", "\u093E", "\u093F", "\u0940", "\u0942", "\u094C", "\u0941", "\u0947", "\u0948", "\u094B", "\x20", "\u0943", "\u0944", "\u0962", "\u090B", "\u0960", "\u090C", "\u0915\u094D", "\u0917\u094D", "\u091A\u094D", "\u091C\u094D", "\u091F\u094D", "\u0921\u094D", "\u0923\u094D", "\u0924\u094D", "\u0926\u094D", "\u0928\u094D", "\u092A\u094D", "\u092B\u094D", "\u092C\u094D", "\u092E\u094D", "\u092F\u094D", "\u0930\u094D", "\u0932\u094D", "\u0935\u094D", "\u0938\u094D", "\u0937\u094D", "\u0939\u094D", "\u0916\u094D", "\u0918\u094D", "\u0919\u094D", "\u091B\u094D", "\u091D\u094D", "\u091E\u094D", "\u0920\u094D", "\u095D\u094D", "\u0922\u094D", "\u0925\u094D", "\u0927\u094D", "\u092D\u094D", "\u0936\u094D", "\u0915\u094D\u0937\u094D", "\u091C\u094D\u091E\u094D", "\u0915\u094D\u0938\u094D", "\u0915", "\u0916", "\u0917", "\u0918", "\u0919", "\u091A", "\u091B", "\u091C", "\u091D", "\u091E", "\u091F", "\u0920", "\u0921", "\u0922", "\u0923", "\u0924", "\u0925", "\u0926", "\u0927", "\u0928", "\u092A", "\u092B", "\u092C", "\u092D", "\u092E", "\u092F", "\u0930", "\u0932", "\u0935", "\u0938", "\u0937", "\u0936", "\u0939", "\u0915\u094D\u0937", "\u0924\u094D\u0930", "\u091C\u094D\u091E", "\u0902", "\u0901", "\u0950", "\u0903", "\u0964", "\u0965", "\u0966", "\u0967", "\u0968", "\u0969", "\u096A", "\u096B", "\u096C", "\u096D", "\u096E", "\u096F", "\u0939\u0948", "\u0939\u0902", "\x66\x6F\x63\x75\x73", "\x73\x65\x6C\x65\x63\x74\x69\x6F\x6E\x53\x74\x61\x72\x74", "\x73\x65\x6C\x65\x63\x74\x69\x6F\x6E\x45\x6E\x64", "\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70", "\x73\x75\x62\x73\x74\x72\x69\x6E\x67", "\x6C\x65\x6E\x67\x74\x68"];
 let text;
-
 function nepConversion() {
     text = document[_0x6ec5[2]][_0x6ec5[1]][_0x6ec5[0]];
     text = text[_0x6ec5[4]](/a/g, _0x6ec5[3]);
@@ -171,9 +170,7 @@ function nepConversion() {
     document[_0x6ec5[2]][_0x6ec5[1]][_0x6ec5[122]]();
 };
 
-/**
- * @param {{ [x: string]: any; }} _0x3771x4
- */
+
 function nep(_0x3771x4) {
     let _0x3771x5 = document[_0x6ec5[2]][_0x6ec5[1]],
         _0x3771x6 = _0x3771x5[_0x6ec5[123]],
@@ -187,8 +184,8 @@ function nep(_0x3771x4) {
     _0x3771x5[_0x6ec5[124]] = _0x3771x8;
     _0x3771x5[_0x6ec5[125]] = _0x3771x9;
 };
-function convert_to_Preeti(unicodeText, preetiText) {
-  //   const input_text_container = document.getElementById('unicode_text_two');
+
+export function convertToPreeti(unicodeText) {
   const array_one = [
     'â€˜',
     '?',
@@ -495,79 +492,79 @@ function convert_to_Preeti(unicodeText, preetiText) {
     'f]',
     'f}'
   ];
-  var modified_substring = unicodeText.value;
+
+  if (!unicodeText) alert("Please provide unicode text..");
+  nepConversion();
+  var modified_substring = unicodeText;
   Replace_Symbols();
   let processed_text = modified_substring;
-  preetiText.value = processed_text;
 
   function Replace_Symbols() {
-
-    let TextToModify = modified_substring;
-    if (TextToModify != '') {
-      let position_of_f = TextToModify.indexOf('à¤¿');
+    if (modified_substring != '') {
+      let position_of_f = modified_substring.indexOf('à¤¿');
       while (position_of_f != -1) {
-        let character_left_to_f = TextToModify.charAt(position_of_f - 1);
-        TextToModify = TextToModify.replace(
+        let character_left_to_f = modified_substring.charAt(position_of_f - 1);
+        modified_substring = modified_substring.replace(
           character_left_to_f + 'à¤¿',
           'l' + character_left_to_f
         );
         position_of_f = position_of_f - 1;
         while (
-          TextToModify.charAt(position_of_f - 1) == 'à¥' &&
+          modified_substring.charAt(position_of_f - 1) == 'à¥' &&
           position_of_f != 0
         ) {
           let string_to_be_replaced =
-            TextToModify.charAt(position_of_f - 2) + 'à¥';
-          TextToModify = TextToModify.replace(
+            modified_substring.charAt(position_of_f - 2) + 'à¥';
+          modified_substring = modified_substring.replace(
             string_to_be_replaced + 'l',
             'l' + string_to_be_replaced
           );
           position_of_f = position_of_f - 2;
         }
-        position_of_f = TextToModify.search(/à¤¿/, position_of_f + 1);
+        position_of_f = modified_substring.search(/à¤¿/, position_of_f + 1);
       }
       let set_of_matras = 'à¤¾à¤¿à¥€à¥à¥‚à¥ƒà¥‡à¥ˆà¥‹à¥Œà¤‚:à¤à¥…';
-      TextToModify += '  ';
+      modified_substring += '  ';
       let space = ' ';
-      let position_of_half_R = TextToModify.indexOf('à¤°à¥');
+      let position_of_half_R = modified_substring.indexOf('à¤°à¥');
       while (position_of_half_R > 0) {
         let probable_position_of_Z = position_of_half_R + 2;
-        let character_at_probable_position_of_Z = TextToModify.charAt(
+        let character_at_probable_position_of_Z = modified_substring.charAt(
           probable_position_of_Z
         );
         while (set_of_matras.match(character_at_probable_position_of_Z) != null) {
           probable_position_of_Z = probable_position_of_Z + 1;
-          character_at_probable_position_of_Z = TextToModify.charAt(
+          character_at_probable_position_of_Z = modified_substring.charAt(
             probable_position_of_Z
           );
         }
         let right_to_position_of_Z = probable_position_of_Z + 1;
         if (right_to_position_of_Z > 0) {
-          let character_right_to_position_of_Z = TextToModify.charAt(
+          let character_right_to_position_of_Z = modified_substring.charAt(
             right_to_position_of_Z
           );
           while ('à¥'.match(character_right_to_position_of_Z) != null) {
             probable_position_of_Z = right_to_position_of_Z + 1;
-            character_at_probable_position_of_Z = TextToModify.charAt(
+            character_at_probable_position_of_Z = modified_substring.charAt(
               probable_position_of_Z
             );
             right_to_position_of_Z = probable_position_of_Z + 1;
-            character_right_to_position_of_Z = TextToModify.charAt(
+            character_right_to_position_of_Z = modified_substring.charAt(
               right_to_position_of_Z
             );
           }
         }
-        let string_to_be_replaced = TextToModify.substr(
+        let string_to_be_replaced = modified_substring.substr(
           position_of_half_R + 2,
           probable_position_of_Z - position_of_half_R - 1
         );
-        TextToModify = TextToModify.replace(
+        modified_substring = modified_substring.replace(
           'à¤°à¥' + string_to_be_replaced,
           string_to_be_replaced + '{'
         );
-        position_of_half_R = TextToModify.indexOf('à¤°à¥');
+        position_of_half_R = modified_substring.indexOf('à¤°à¥');
       }
-      TextToModify = TextToModify.substr(0, TextToModify.length - 2);
+      modified_substring = modified_substring.substr(0, modified_substring.length - 2);
       for (
         let input_symbol_idx = 0;
         input_symbol_idx < array_one.length;
@@ -575,31 +572,36 @@ function convert_to_Preeti(unicodeText, preetiText) {
       ) {
         let idx = 0;
         while (idx != -1) {
-          TextToModify = TextToModify.replace(
+          modified_substring = modified_substring.replace(
             array_one[input_symbol_idx],
             array_two[input_symbol_idx]
           );
-          idx = TextToModify.indexOf(array_one[input_symbol_idx]);
+          idx = modified_substring.indexOf(array_one[input_symbol_idx]);
         }
       }
     }
   }
+
+  return processed_text;
+
 }
 
- function convert_to_unicode(preetiElement, unicodeElement) {
+export function convertToUnicode(preetiText) {
    let array_one = ["ç", "˜", ".", "'m", "]m", "Fmf", "Fm", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", "k|m", "em", "km", "Qm", "qm", "N˜", "¡", "¢", "1", "2", "4", ">", "?", "B", "I", "Q", "ß", "q", "„", "‹", "•", "›", "§", "°", "¶", "¿", "Å", "Ë", "Ì", "Í", "Î", "Ý", "å", "6«", "7«", "8«", "9«", "Ø", "|", "8Þ", "9Þ", "S", "s", "V", "v", "U", "u", "£", "3", "ª", "R", "r", "5", "H", "h", "‰", "´", "~", "`", "6", "7", "8", "9", "0", "T", "t", "Y", "y", "b", "W", "w", "G", "g", "K", "k", "ˆ", "A", "a", "E", "e", "D", "d", "o", "/", "N", "n", "J", "j", "Z", "z", "i", ":", ";", "X", "x", "cf‘", "c‘f", "cf}", "cf]", "cf", "c", "O{", "O", "pm", "p", "C", "P]", "P", "f‘", '"', "'", "+", "f", "[", "\\", "]", "}", "F", "L", "M", "्ा", "्ो", "्ौ", "अो", "अा", "आै", "आे", "ाो", "ाॅ", "ाे", "ंु", "ेे", "अै", "ाे", "अे", "ंा", "अॅ", "ाै", "ैा", "ंृ", "ँा", "ँू", "ेा", "ंे", "¥", "÷", "ः"];
-
    let array_two = ["ॐ", "ऽ", "।", "m'", "m]", "mfF", "mF", "०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "फ्र", "झ", "फ", "क्त", "क्र", "ल", "ज्ञ्", "द्घ", "ज्ञ", "द्द", "द्ध", "श्र", "रु", "द्य", "क्ष्", "त्त", "द्म", "त्र", "ध्र", "ङ्घ", "ड्ड", "द्र", "ट्ट", "ड्ढ", "ठ्ठ", "रू", "हृ", "ङ्ग", "त्र", "ङ्क", "ङ्ख", "ट्ठ", "द्व", "ट्र", "ठ्र", "ड्र", "ढ्र", "्य", "्र", "ड़", "ढ़", "क्", "क", "ख्", "ख", "ग्", "ग", "घ्", "घ", "ङ", "च्", "च", "छ", "ज्", "ज", "झ्", "झ", "ञ्", "ञ", "ट", "ठ", "ड", "ढ", "ण्", "त्", "त", "थ्", "थ", "द", "ध्", "ध", "न्", "न", "प्", "प", "फ्", "ब्", "ब", "भ्", "भ", "म्", "म", "य", "र", "ल्", "ल", "व्", "व", "श्", "श", "ष्", "स्", "स", "ह्", "ह", "ऑ", "ऑ", "औ", "ओ", "आ", "अ", "ई", "इ", "ऊ", "उ", "ऋ", "ऐ", "ए", "ॉ", "ू", "ु", "ं", "ा", "ृ", "्", "े", "ै", "ँ", "ी", "ः", "", "े", "ै", "ओ", "आ", "औ", "ओ", "ो", "ॉ", "ो", "ुं", "े", "अ‍ै", "ो", "अ‍े", "ां", "अ‍ॅ", "ौ", "ौ", "ृं", "ाँ", "ूँ", "ो", "ें", "र्‍", "/", ":"];
 
   let array_one_length = array_one.length;
 
-  var modified_substring = preetiElement.value;
-  let text_size = preetiElement.value.length;
+  if (!preetiText) alert("Please provide preeti text..");
+
+
+  var modified_substring = preetiText;
+  let text_size = preetiText.length;
   let processed_text = "";
   let initialCondition = 0;
   let finalCondition = 0;
   let satisfyCondition = 1;
-  let max_text_size = 6000;
+  let max_text_size = 20000;
   while (satisfyCondition == 1) {
     initialCondition = finalCondition;
     if (finalCondition < text_size - max_text_size) {
@@ -616,7 +618,7 @@ function convert_to_Preeti(unicodeText, preetiText) {
       Replace_Symbols();
     }
     processed_text += modified_substring;
-    unicodeElement.value = processed_text;
+    return processed_text;
   }
 
   function Replace_Symbols() {
@@ -679,27 +681,3 @@ function convert_to_Preeti(unicodeText, preetiText) {
   }
 }
 
-export function clearContent(textbox, textbox2) {
-  textbox.value ? (textbox.value = '') : null;
-  textbox2.value ? (textbox2.value = '') : null;
-}
-export function copy(event, htmlElement) {
-  doCopying(htmlElement, event);
-}
-function doCopying(copyText, event) {
-  try {
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-    event.target.style.color = 'green';
-    event.target.innerHTML = 'Copied &#10003;';
-    setTimeout(function () {
-      event.target.innerHTML = 'Copy';
-      event.target.style.color = 'inherit';
-    }, 3000);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-module.exports = { convert_to_unicode: convert_to_unicode,convert_to_preeti: convert_to_preeti, nep: nep, nepConversion: nepConversion, clearContent: clearContent, copy: copy };
